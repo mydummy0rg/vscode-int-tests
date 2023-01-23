@@ -29,6 +29,8 @@ jobs:
         
     - name: Run tests
       run: |
+        cd vscode-test/sample
+        npm install
         xvfb-run --auto-servernum npm test
     #- name: Install
     #  uses: GabrielBB/xvfb-action@v1
