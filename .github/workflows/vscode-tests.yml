@@ -20,7 +20,9 @@ jobs:
     - run: |
         git clone https://github.com/microsoft/vscode-test
         cd vscode-test/sample
-        npm install && npm run compile
+        npm install
+        npm i rimraf unzipper http-proxy-agent
+        npm run compile
     - name: Install
       uses: GabrielBB/xvfb-action@v1
     - run: |
