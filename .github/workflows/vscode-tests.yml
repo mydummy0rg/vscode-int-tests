@@ -25,9 +25,9 @@ jobs:
     - name: Install
       uses: GabrielBB/xvfb-action@v1
       with:
+        working-directory: vscode-test/sample
         run: |
-          cd vscode-test/sample
-          npm i
+          npm install
           xvfb-run -a npm test
     #  if: runner.os == 'Linux'
     #- run: |
