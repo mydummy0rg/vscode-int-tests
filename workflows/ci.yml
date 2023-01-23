@@ -1,3 +1,4 @@
+name: Run Vscode Integration tests
 on:
   push:
     branches:
