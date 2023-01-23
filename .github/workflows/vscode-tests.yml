@@ -24,11 +24,13 @@ jobs:
         npm run compile
     - name: Install
       uses: GabrielBB/xvfb-action@v1
-    - run: |
-        cd vscode-test/sample
-        xvfb-run -a npm test
-      if: runner.os == 'Linux'
-    - run: |
-        cd vscode-test/sample
-        npm test
-      if: runner.os != 'Linux' 
+      with:
+        run: |
+          cd vscode-test/sample
+          npm i
+          xvfb-run -a npm test
+    #  if: runner.os == 'Linux'
+    #- run: |
+    #    cd vscode-test/sample
+    #    npm test
+    #  if: runner.os != 'Linux' 
